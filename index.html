@@ -3,57 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#071822" />
-  <meta name="description" content="রক্তের গ্রুপ ও সামঞ্জস্য সম্পর্কে সহজ বাংলা তথ্য" />
-  <title>রক্তবন্ধু | রক্তের গ্রুপ জানুন</title>
+  <meta name="theme-color" content="#081922" />
+  <meta name="description" content="রক্তবন্ধু - রক্তের গ্রুপ, দাতা, গ্রহণ, Rh ফ্যাক্টর ও সামঞ্জস্যের তথ্য" />
+  <title>রক্তবন্ধু | প্রফেশনাল ব্লাড সিস্টেম</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #071822;
-      --bg-2: #0a1f2d;
-      --panel: rgba(18, 30, 40, 0.7);
+      --bg-2: #0b1d2a;
+      --bg-3: #102636;
+      --panel: rgba(12, 22, 31, 0.72);
       --panel-border: rgba(255,255,255,0.08);
-      --text: #edf3f7;
-      --muted: #b8c7d5;
-      --soft: #dfeaf2;
-      --red: #e54040;
-      --red-2: #ff7878;
-      --pill: #1d2d3c;
-      --pill-border: rgba(255,255,255,0.08);
-      --shadow: 0 18px 44px rgba(0,0,0,0.32);
-      --header-bg: rgba(6, 19, 29, 0.72);
-      --line: rgba(255,255,255,0.12);
-      --button-light: #f3f5f6;
-      --button-text: #101d2a;
-      --card-bg: #edf3f6;
-      --card-title: #d33d3d;
-      --card-text: #2b4157;
-      --input: rgba(255,255,255,0.03);
+      --card: #e7edf2;
+      --card-2: #f4f7f9;
+      --text: #edf6ff;
+      --muted: #bed0df;
+      --heading: #f6f8fb;
+      --accent: #ef4f4f;
+      --accent-2: #ff8383;
+      --accent-soft: rgba(239,79,79,0.12);
+      --chip: rgba(255,255,255,0.04);
+      --soft-text: #2b4157;
+      --soft-text-2: #415a73;
+      --header-bg: rgba(7, 24, 34, 0.8);
+      --line: rgba(255,255,255,0.08);
+      --shadow: 0 24px 54px rgba(1, 10, 16, 0.42);
+      --button-light: #f5f7fb;
+      --button-text: #122435;
+      --success: #2bc48a;
+      --warning: #ffb853;
     }
 
     body[data-theme="light"] {
-      --bg: #f3f7fa;
-      --bg-2: #edf3f8;
+      --bg: #f3f7fb;
+      --bg-2: #edf4fa;
+      --bg-3: #ffffff;
       --panel: rgba(255,255,255,0.8);
-      --panel-border: rgba(19,31,44,0.08);
-      --text: #122437;
-      --muted: #4d657f;
-      --soft: #1d2f41;
-      --red: #d33d3d;
-      --red-2: #ef6666;
-      --pill: #eef3f8;
-      --pill-border: rgba(16,24,36,0.08);
-      --shadow: 0 20px 45px rgba(18,32,44,0.12);
-      --header-bg: rgba(255,255,255,0.7);
-      --line: rgba(18,31,44,0.08);
+      --panel-border: rgba(17,30,39,0.08);
+      --card: #ffffff;
+      --card-2: #f4f7f9;
+      --text: #122436;
+      --muted: #50667d;
+      --heading: #172b3b;
+      --accent: #d73c3c;
+      --accent-2: #ef5f5f;
+      --accent-soft: rgba(215,60,60,0.12);
+      --chip: rgba(17,30,39,0.03);
+      --soft-text: #2b3d50;
+      --soft-text-2: #5b6d7d;
+      --header-bg: rgba(255,255,255,0.72);
+      --line: rgba(17,30,39,0.08);
+      --shadow: 0 24px 54px rgba(17, 30, 39, 0.1);
       --button-light: #ffffff;
-      --button-text: #1d2a39;
-      --card-bg: #ffffff;
-      --card-title: #d33d3d;
-      --card-text: #2f4053;
-      --input: rgba(19,31,44,0.03);
+      --button-text: #132536;
     }
 
     * { box-sizing: border-box; }
@@ -62,27 +66,25 @@
       margin: 0;
       min-width: 320px;
       font-family: "Hind Siliguri", "DM Sans", sans-serif;
-      background: radial-gradient(circle at top left, #0d1c29 0%, var(--bg) 36%, #050e15 100%);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 40%, #050c12 100%);
       color: var(--text);
-      transition: background .25s ease, color .25s ease;
+      transition: background .2s ease, color .2s ease;
     }
     body[data-theme="light"] {
-      background: radial-gradient(circle at top left, #edf4fa 0%, var(--bg) 36%, #edf2f5 100%);
+      background: linear-gradient(180deg, #eef5fb 0%, #f6f9fc 40%, #eef3f5 100%);
     }
     a { color: inherit; text-decoration: none; }
-    button, select {
-      font: inherit;
-    }
-    .wrap {
-      width: min(1180px, calc(100% - 48px));
-      margin: 0 auto;
-    }
+    button, select { font: inherit; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 50;
-      height: 80px;
+      height: 78px;
       display: flex;
       align-items: center;
       background: var(--header-bg);
@@ -112,43 +114,38 @@
       display: grid;
       place-items: center;
       border-radius: 12px;
-      background: linear-gradient(135deg, #ff6f6f, #ba3a3a);
+      background: linear-gradient(135deg, var(--accent), #a92828);
       color: white;
-      box-shadow: 0 12px 24px rgba(255,107,107,0.24);
+      box-shadow: 0 12px 22px rgba(239, 79, 79, 0.25);
     }
-    .brand-mark svg {
-      width: 20px;
-      height: 20px;
-    }
+    .brand-mark svg { width: 21px; height: 21px; }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 34px;
-      color: var(--soft);
+      gap: 30px;
+      color: var(--text);
       font-size: 15px;
       font-weight: 500;
       white-space: nowrap;
     }
     .nav-links a {
       position: relative;
-      padding: 7px 0;
+      padding: 6px 0;
+      color: var(--muted);
     }
     .nav-links a::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -10px;
-      width: 100%;
+      right: 0;
+      bottom: -9px;
       height: 2px;
-      background: var(--red);
+      background: var(--accent);
       transform: scaleX(0);
       transform-origin: left center;
       transition: transform .2s ease;
     }
-    .nav-links a:hover::after,
-    .nav-links a:focus-visible::after {
-      transform: scaleX(1);
-    }
+    .nav-links a:hover::after, .nav-links a:focus-visible::after { transform: scaleX(1); }
     .nav-right {
       display: flex;
       align-items: center;
@@ -159,60 +156,47 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-width: 96px;
       padding: 9px 14px;
-      border: 1px solid var(--panel-border);
       border-radius: 999px;
-      background: rgba(255,255,255,0.03);
+      background: var(--chip);
       color: var(--text);
+      border: 1px solid var(--panel-border);
+      min-width: 96px;
       font-weight: 700;
       cursor: pointer;
       transition: transform .2s ease, border-color .2s ease;
     }
-    .theme-toggle:hover {
-      transform: translateY(-1px);
-      border-color: rgba(229,64,64,0.38);
-    }
+    .theme-toggle:hover { transform: translateY(-1px); border-color: rgba(239,79,79,0.4); }
     .theme-toggle-icon {
       width: 24px;
       height: 24px;
-      border-radius: 50%;
       display: grid;
       place-items: center;
+      border-radius: 50%;
       background: rgba(255,255,255,0.06);
       font-size: 15px;
     }
-    .theme-toggle-text {
-      font-size: 13px;
-      letter-spacing: 0.02em;
-    }
-
+    .theme-toggle-text { font-size: 13px; letter-spacing: 0.03em; }
     .nav-cta {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 11px 18px;
       border-radius: 999px;
-      border: 1px solid var(--panel-border);
-      background: linear-gradient(135deg, var(--button-light), #edf3f8);
-      color: var(--button-text);
       font-weight: 700;
-      box-shadow: 0 8px 16px rgba(7, 19, 27, 0.14);
+      background: linear-gradient(135deg, var(--button-light), #eef3f9);
+      color: var(--button-text);
+      border: 1px solid var(--panel-border);
+      box-shadow: 0 10px 18px rgba(17, 30, 39, 0.12);
     }
-    .nav-cta svg {
-      width: 16px;
-      height: 16px;
-    }
+    .nav-cta svg { width: 16px; height: 16px; }
 
     .hero {
-      padding: 54px 0 38px;
-      min-height: calc(100vh - 80px - 104px);
-      display: flex;
-      align-items: center;
+      padding: 58px 0 46px;
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+      grid-template-columns: minmax(0, 1.25fr) minmax(285px, 0.75fr);
       align-items: center;
       gap: 48px;
     }
@@ -220,90 +204,142 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      color: var(--red);
+      color: var(--accent);
       font-size: 15px;
       font-weight: 700;
-      letter-spacing: 0.04em;
-      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
     }
     .eyebrow::before {
       content: "";
-      width: 28px;
+      display: block;
+      width: 26px;
       height: 3px;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--red) 0%, rgba(255,255,255,0.3) 100%);
+      background: linear-gradient(90deg, var(--accent), rgba(255,255,255,0.25));
     }
     h1 {
       margin: 0;
-      max-width: 580px;
-      font-size: clamp(42px, 5vw, 76px);
-      line-height: 0.98;
-      letter-spacing: -0.06em;
+      max-width: 600px;
+      font-size: clamp(42px, 5.4vw, 74px);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+      color: var(--heading);
       font-weight: 700;
-      color: var(--text);
     }
     h1 .highlight {
-      color: var(--red);
       display: block;
-      font-weight: 700;
+      color: var(--accent);
       font-style: normal;
     }
     .hero-copy {
-      max-width: 620px;
+      max-width: 610px;
+      margin-top: 26px;
       color: var(--muted);
       font-size: 18px;
-      line-height: 1.75;
-      margin: 26px 0 0;
+      line-height: 1.8;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary {
+      color: white;
+      background: linear-gradient(135deg, var(--accent), #ba2f2f);
+      box-shadow: 0 18px 28px rgba(239,79,79,0.28);
+    }
+    .btn.secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--panel-border);
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .mini-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--panel-border);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .mini-pill strong {
+      color: var(--heading);
+      font-size: 15px;
+      letter-spacing: -0.02em;
     }
 
-    .compatibility-card {
-      width: min(100%, 360px);
+    .hero-panel {
       margin-left: auto;
+      width: min(100%, 370px);
       padding: 24px 20px 20px;
       background: var(--panel);
       border: 1px solid var(--panel-border);
       border-radius: 26px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
-    .compatibility-card label {
+    .hero-panel label {
       display: block;
+      margin-bottom: 12px;
       color: var(--muted);
       font-size: 14px;
       font-weight: 600;
-      margin-bottom: 10px;
     }
     .selector-shell {
       position: relative;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
     .selector-shell::after {
       content: "⌄";
       position: absolute;
       right: 16px;
       top: 50%;
-      transform: translateY(-50%);
-      color: var(--red);
-      font-size: 26px;
+      transform: translateY(-48%);
+      color: var(--accent);
+      font-size: 28px;
       pointer-events: none;
     }
     select {
       width: 100%;
       appearance: none;
-      background: var(--input);
       border: 0;
       border-radius: 14px;
-      padding: 14px 44px 14px 14px;
+      background: rgba(255,255,255,0.02);
       color: var(--text);
+      padding: 14px 42px 14px 14px;
       font-size: 20px;
       font-weight: 600;
+      border-bottom: 2px solid rgba(239,79,79,0.42);
       outline: none;
-      border-bottom: 2px solid rgba(229,64,64,0.45);
     }
-    .result-label {
+    .result-tag {
       display: block;
-      margin-top: 6px;
+      margin-top: 8px;
       color: var(--muted);
       font-size: 14px;
       font-weight: 600;
@@ -311,26 +347,22 @@
     .result-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 14px;
-      min-height: 46px;
+      gap: 10px;
+      margin-top: 12px;
+      min-height: 48px;
     }
     .result-group {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 54px;
+      min-width: 56px;
       padding: 10px 14px;
       border-radius: 12px;
-      background: linear-gradient(135deg, #ff6b6b, #c93030);
+      background: linear-gradient(135deg, var(--accent), #b32a2a);
       color: white;
       font-weight: 700;
-      box-shadow: 0 10px 18px rgba(229,64,64,0.2);
+      box-shadow: 0 12px 18px rgba(239,79,79,0.18);
     }
-    .result-group.empty {
-      display: none;
-    }
-
     .sr-only {
       position: absolute;
       width: 1px;
@@ -339,82 +371,235 @@
       margin: -1px;
       overflow: hidden;
       clip: rect(0,0,0,0);
-      white-space: nowrap;
       border: 0;
+      white-space: nowrap;
     }
 
-    .below {
-      padding: 18px 0 8px;
+    .stats {
+      padding: 6px 0 34px;
     }
-    .mini-grid {
+    .stats-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+      gap: 18px;
     }
-    .soft-card {
-      background: var(--card-bg);
-      border: 1px solid rgba(55, 74, 93, 0.08);
-      border-radius: 26px;
-      padding: 22px 18px 18px;
-      box-shadow: 0 10px 18px rgba(10, 20, 29, 0.06);
+    .stat-card {
+      padding: 22px 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--panel-border);
+      box-shadow: var(--shadow);
     }
-    .soft-card .icon {
-      width: 42px;
-      height: 42px;
+    .stat-number {
+      display: block;
+      font-size: 36px;
+      letter-spacing: -0.05em;
+      color: var(--heading);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .stat-text {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .feature-section, .group-section, .process-section {
+      padding: 76px 0 0;
+    }
+    .section-head {
+      max-width: 680px;
+      margin-bottom: 26px;
+    }
+    .section-head .kicker {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+      color: var(--heading);
+    }
+    .feature-grid, .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .feature-card, .process-card {
+      padding: 24px 20px 22px;
+      border-radius: 24px;
+      background: var(--card);
+      border: 1px solid rgba(27, 44, 59, 0.08);
+      box-shadow: 0 12px 24px rgba(18, 32, 44, 0.06);
+    }
+    .feature-icon, .process-step {
+      width: 46px;
+      height: 46px;
       display: grid;
       place-items: center;
       border-radius: 14px;
-      background: rgba(229,64,64,0.1);
-      color: var(--red);
+      background: rgba(239,79,79,0.1);
+      color: var(--accent);
       font-size: 22px;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
-    .soft-card h3 {
+    .feature-card h3, .process-card h3 {
       margin: 0 0 8px;
-      color: var(--card-title);
-      font-size: 21px;
-      line-height: 1.35;
+      color: var(--heading);
+      font-size: 23px;
+      line-height: 1.3;
     }
-    .soft-card p,
-    .soft-card li {
+    .feature-card p, .process-card p {
       margin: 0;
-      color: var(--card-text);
+      color: var(--soft-text-2);
       font-size: 15px;
       line-height: 1.7;
     }
-    .soft-card ul {
+
+    .group-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 22px;
+    }
+    .group-card {
+      padding: 18px 16px 16px;
+      border-radius: 26px;
+      background: var(--card-2);
+      border: 1px solid rgba(27, 44, 59, 0.08);
+      box-shadow: 0 12px 24px rgba(18, 32, 44, 0.04);
+    }
+    .group-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .group-badge {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #ffefef, #f7d4d4);
+      color: var(--accent);
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      border: 1px solid rgba(239,79,79,0.12);
+    }
+    .group-sign {
+      font-size: 42px;
+      line-height: 1;
+      color: var(--accent);
+      font-weight: 300;
+    }
+    .group-card h3 {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+    .group-card p {
       margin: 0;
-      padding-left: 18px;
+      color: var(--soft-text);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
-    @media (max-width: 900px) {
+    .cta-banner {
+      margin: 78px auto 0;
+      padding: 28px 0 80px;
+    }
+    .banner-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 28px 32px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(239,79,79,0.12), rgba(255,255,255,0.04));
+      border: 1px solid var(--panel-border);
+    }
+    .banner-box h3 {
+      margin: 0;
+      color: var(--heading);
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.15;
+      letter-spacing: -0.05em;
+    }
+    .banner-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .banner-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    footer {
+      padding: 24px 0 36px;
+      border-top: 1px solid var(--line);
+    }
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .footer-brand {
+      color: var(--heading);
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
       .nav-links { display: none; }
       .hero-grid { grid-template-columns: 1fr; }
-      .compatibility-card { margin: 0; }
-      .mini-grid { grid-template-columns: 1fr; }
+      .hero-panel { margin-left: 0; }
+      .feature-grid, .process-grid, .stats-grid, .group-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .banner-box { flex-direction: column; align-items: flex-start; }
+      .banner-actions { justify-content: flex-start; }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 28px, 1180px); }
       .topbar { height: auto; padding: 16px 0; }
       .nav { flex-wrap: wrap; }
       .nav-right { width: 100%; justify-content: space-between; }
-      body { min-width: 0; }
-      .wrap { width: min(100% - 28px, 1180px); }
-      h1 { max-width: 100%; }
-      .hero { padding-top: 30px; }
-      .compatibility-card { width: 100%; }
+      .hero { padding-top: 36px; }
+      .feature-grid, .process-grid, .stats-grid, .group-grid { grid-template-columns: 1fr; }
+      .group-badge { width: 70px; height: 70px; }
+      .banner-box { padding: 20px 20px; }
+      .footer-row { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
-<body>
+<body data-theme="dark">
   <header class="topbar">
     <nav class="nav wrap" aria-label="প্রধান নেভিগেশন">
-      <a class="brand" href="#home" aria-label="রক্তবন্ধু, শুরুতে যান">
+      <a href="#home" class="brand" aria-label="রক্তবন্ধু, শুরুতে যান">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 21s-7.5-4.4-7.5-10.1A4.3 4.3 0 0 1 12 8.2a4.3 4.3 0 0 1 7.5 2.7C19.5 16.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.8"/>
-            <path d="M12 10v6m-3-3h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 21s-7.5-4.4-7.5-10.1A4.3 4.3 0 0 1 12 8.2a4.3 4.3 0 0 1 7.5 2.7C19.5 16.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" />
+            <path d="M12 10v6m-3-3h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
           </svg>
         </span>
         <span>রক্তবন্ধু</span>
@@ -424,7 +609,7 @@
         <a href="#info">রক্তের তথ্য</a>
         <a href="#groups">রক্তের গ্রুপ</a>
         <a href="#compatibility">সামঞ্জস্য</a>
-        <a href="#rh-factor">Rh ফ্যাক্টর</a>
+        <a href="#process">প্রক্রিয়া</a>
       </div>
 
       <div class="nav-right">
@@ -442,26 +627,36 @@
     </nav>
   </header>
 
-  <main class="page-shell" id="home">
+  <main id="home">
     <section class="hero" id="compatibility">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">রক্তের গ্রুপ</div>
+          <div class="eyebrow">রক্তদানের জন্য প্রস্তুত</div>
           <h1>
-            আপনার রক্তের গ্রুপ
-            <span class="highlight">কোনটি?</span>
+            রক্তই
+            <span class="highlight">জীবনের জন্য সেরা উপহার</span>
           </h1>
 
           <p class="hero-copy">
-            রক্তের গ্রুপ (রক্তের ধরন) নির্ধারণ করে কোন রক্ত দান বা গ্রহণ করা নিরাপদ। ABO ধরন ও Rh ফ্যাক্টর মিলিয়ে
-            আপনার রক্তের সামঞ্জস্য নির্ধারিত হয়।
+            রক্তের গ্রুপ, Rh ফ্যাক্টর ও সামঞ্জস্য বুঝে নেওয়া জরুরি। নিরাপদ দান ও গ্রহণের জন্য সঠিক তথ্য জানা প্রতিটি মানুষের জন্য গুরুত্বপূর্ণ।
           </p>
+
+          <div class="hero-actions">
+            <a href="#process" class="btn primary">দাতা হতে চান</a>
+            <a href="#groups" class="btn secondary">রক্তের গ্রুপ দেখুন</a>
+          </div>
+
+          <div class="hero-meta" aria-label="পরিসংখ্যান তথ্য">
+            <div class="mini-pill"><strong>2,500+</strong> রক্তদানকারী</div>
+            <div class="mini-pill"><strong>98%</strong> সামঞ্জস্য সুরক্ষা</div>
+            <div class="mini-pill"><strong>24/7</strong> সহায়তা</div>
+          </div>
         </div>
 
-        <aside class="compatibility-card" aria-label="রক্তের গ্রুপ সামঞ্জস্য">
+        <aside class="hero-panel" aria-label="রক্তের গ্রুপ সামঞ্জস্য">
           <label for="blood-select">রক্তের গ্রুপ</label>
           <div class="selector-shell">
-            <label class="sr-only" for="blood-select">সিলেক্ট করুন</label>
+            <label class="sr-only" for="blood-select">রক্তের গ্রুপ নির্বাচন করুন</label>
             <select id="blood-select" aria-label="রক্তের গ্রুপ নির্বাচন">
               <option value="A+">A+</option>
               <option value="A-">A-</option>
@@ -474,7 +669,7 @@
             </select>
           </div>
 
-          <span class="result-label">দাতা/গ্রহীতা সামঞ্জস্য</span>
+          <span class="result-tag">দাতা/গ্রহীতা সামঞ্জস্য</span>
           <div id="compatible-groups" class="result-row" aria-live="polite">
             <span class="result-group">A+</span>
             <span class="result-group">A-</span>
@@ -485,26 +680,184 @@
       </div>
     </section>
 
-    <section class="below" id="info">
-      <div class="wrap mini-grid">
-        <article class="soft-card">
-          <div class="icon">+</div>
-          <h3>রক্তের ধরন কী?</h3>
-          <p>ABO ধরন ও Rh ফ্যাক্টর একসাথে মিলে রক্তের গ্রুপ ঠিক হয়। যেমন A+, B-, O+, AB- ইত্যাদি।</p>
+    <section class="stats">
+      <div class="wrap stats-grid">
+        <article class="stat-card">
+          <span class="stat-number">8</span>
+          <div class="stat-text">সাধারণ রক্তের গ্রুপের ধরন (ABO + Rh)</div>
         </article>
-        <article class="soft-card" id="groups">
-          <div class="icon">⚕</div>
-          <h3>দানের নিরাপত্তা</h3>
-          <p>সামঞ্জস্যপূর্ণ দাতা রক্তের প্রয়োজনীয়তা মেটাতে পারে; যেকোনো সিদ্ধান্তের আগে চিকিৎসকের পরামর্শ নিন।</p>
+        <article class="stat-card">
+          <span class="stat-number">4</span>
+          <div class="stat-text">প্রধান রক্তের ধরন: A, B, AB, O</div>
         </article>
-        <article class="soft-card" id="rh-factor">
-          <div class="icon">ℹ</div>
-          <h3>Rh ফ্যাক্টর</h3>
-          <p>Rh ধনাত্মক (+) বা ঋণাত্মক (-) চিহ্ন রক্তে উপস্থিত অ্যান্টিজেনের ওপর নির্ভর করে।</p>
+        <article class="stat-card">
+          <span class="stat-number">2</span>
+          <div class="stat-text">Rh রণ: পজিটিভ (+) ও নেগেটিভ (-)</div>
         </article>
       </div>
     </section>
+
+    <section class="feature-section" id="info">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">কেন গুরুত্বপূর্ণ</div>
+          <h2>সঠিক তথ্য জানলে রক্তদান আরও নিরাপদ ও কার্যকর</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">+</div>
+            <h3>রক্তের ধরন কী?</h3>
+            <p>ABO ধরন ও Rh ফ্যাক্টর একসাথে মিলে রক্তের গ্রুপ তৈরি হয়। যেমন A+, AB-, O+ ও O-।</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⚕</div>
+            <h3>দানের নিরাপত্তা</h3>
+            <p>সামঞ্জস্যপূর্ণ রক্ত দান করলে রোগীর জন্য নিরাপদ ও দ্রুত সহায়তা হয়।</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">ℹ</div>
+            <h3>Rh ফ্যাক্টর</h3>
+            <p>Rh ধনাত্মক (+) বা ঋণাত্মক (-) চিহ্নের ওপর নির্ভর করে রক্তের সামঞ্জস্য।</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="group-section" id="groups">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">রক্তের গ্রুপ</div>
+          <h2>ABO + Rh অনুযায়ী প্রধান রক্তের ডেটা</h2>
+        </div>
+
+        <div class="group-grid">
+          <article class="group-card">
+            <div class="group-top">
+              <div class="group-badge">A+</div>
+              <div class="group-sign">+</div>
+            </div>
+            <h3>A+</h3>
+            <p>A রক্ত, Rh পজিটিভ</p>
+          </article>
+
+          <article class="group-card">
+            <div class="group-top">
+              <div class="group-badge">A-</div>
+              <div class="group-sign">−</div>
+            </div>
+            <h3>A-</h3>
+            <p>A রক্ত, Rh নেগেটিভ</p>
+          </article>
+
+          <article class="group-card">
+            <div class="group-top">
+              <div class="group-badge">B+</div>
+              <div class="group-sign">+</div>
+            </div>
+            <h3>B+</h3>
+            <p>B রক্ত, Rh পজিটিভ</p>
+          </article>
+
+          <article class="group-card">
+            <div class="group-top">
+              <div class="group-badge">B-</div>
+              <div class="group-sign">−</div>
+            </div>
+            <h3>B-</h3>
+            <p>B রক্ত, Rh নেগেটিভ</p>
+          </article>
+
+          <article class="group-card">
+            <div class="group-top">
+              <div class="group-badge">AB+</div>
+              <div class="group-sign">+</div>
+            </div>
+            <h3>AB+</h3>
+            <p>AB রক্ত, Rh পজিটিভ</p>
+          </article>
+
+          <article class="group-card">
+            <div class="group-top">
+              <div class="group-badge">AB-</div>
+              <div class="group-sign">−</div>
+            </div>
+            <h3>AB-</h3>
+            <p>AB রক্ত, Rh নেগেটিভ</p>
+          </article>
+
+          <article class="group-card">
+            <div class="group-top">
+              <div class="group-badge">O+</div>
+              <div class="group-sign">+</div>
+            </div>
+            <h3>O+</h3>
+            <p>O রক্ত, Rh পজিটিভ</p>
+          </article>
+
+          <article class="group-card">
+            <div class="group-top">
+              <div class="group-badge">O-</div>
+              <div class="group-sign">−</div>
+            </div>
+            <h3>O-</h3>
+            <p>O রক্ত, Rh নেগেটিভ</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">রক্তদানের ধাপ</div>
+          <h2>নিরাপদ ও সহজ রক্তদানের প্রক্রিয়া</h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="process-step">1</div>
+            <h3>প্রাথমিক যাচাই</h3>
+            <p>রক্তের গ্রুপ, ওজন, রক্তচাপ ও সামগ্রিক স্বাস্থ্য যাচাই করা হয়।</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-step">2</div>
+            <h3>সামঞ্জস্য পরীক্ষা</h3>
+            <p>দাতা ও রোগীর রক্তের সামঞ্জস্য নিশ্চিত করার জন্য প্রয়োজনীয় পরীক্ষা করা হয়।</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-step">3</div>
+            <h3>দান ও পুনরুদ্ধার</h3>
+            <p>নিরাপদভাবে রক্তদান সম্পন্ন হলে পর্যাপ্ত পানি ও বিশ্রামের মাধ্যমে পুনরুদ্ধার হয়।</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="wrap banner-box">
+        <div>
+          <h3>দাতা হতে আগ্রহী? এখনই সাইন আপ করুন</h3>
+          <p>নিরাপদ রক্তদানের জন্য সঠিক তথ্য, সময়মতো সহায়তা ও সঠিক দাতা-গ্রহীতা মেলবন্ধন।</p>
+        </div>
+        <div class="banner-actions">
+          <a href="#compatibility" class="btn primary">সামঞ্জস্য দেখুন</a>
+          <a href="#info" class="btn secondary">আরও জানুন</a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <p class="footer-brand">রক্তবন্ধু · রক্তের গ্রুপ সচেতনতা</p>
+      <p>তথ্যটি শিক্ষামূলক; চিকিৎসকের পরামর্শ ছাড়া কোনো সিদ্ধান্ত নেবেন না।</p>
+    </div>
+  </footer>
 
   <script>
     const compatibility = {
@@ -545,7 +898,7 @@
       try { localStorage.setItem('bloodbuddy-theme', theme); } catch (error) {}
     }
 
-    bloodSelect.addEventListener('change', (event) => {
+    bloodSelect.addEventListener('change', event => {
       renderCompatibility(event.target.value);
     });
 
@@ -558,8 +911,8 @@
     renderCompatibility(bloodSelect.value);
 
     themeToggle.addEventListener('click', () => {
-      const current = document.body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-      applyTheme(current === 'light' ? 'dark' : 'light');
+      const currentTheme = document.body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      applyTheme(currentTheme === 'light' ? 'dark' : 'light');
     });
   </script>
 </body>
