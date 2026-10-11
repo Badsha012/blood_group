@@ -465,6 +465,80 @@
       line-height: 1.7;
     }
 
+    .video-section {
+      padding: 70px 0 0;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .video-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+      background: linear-gradient(135deg, #0d1720, #09151d 38%, #20111a 100%);
+      border: 1px solid var(--panel-border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+    .video-card video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      background: #000;
+    }
+    .video-aside {
+      padding: 26px 22px;
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(239,79,79,0.1), rgba(255,255,255,0.04));
+      border: 1px solid var(--panel-border);
+      box-shadow: var(--shadow);
+    }
+    .video-aside h3 {
+      margin: 0 0 12px;
+      color: var(--heading);
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+    .video-aside p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--heading);
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .feature-list li::before {
+      content: "✓";
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(239,79,79,0.1);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
     .group-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -517,6 +591,195 @@
       font-size: 15px;
       line-height: 1.6;
     }
+
+    .management-section {
+      padding: 76px 0 0;
+    }
+    .management-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .management-card {
+      padding: 24px;
+      border-radius: 26px;
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      box-shadow: var(--shadow);
+    }
+    .management-card h3 {
+      margin: 0 0 8px;
+      color: var(--heading);
+      font-size: 25px;
+    }
+    .management-card > p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .field {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .field.full { grid-column: 1 / -1; }
+    .field input, .field select {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 12px;
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      background: var(--chip);
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+    }
+    .field input:focus, .field select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+    .field select option { color: #172534; }
+    .consent-field {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .consent-field input { margin-top: 4px; accent-color: var(--accent); }
+    .form-submit {
+      margin-top: 16px;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 15px;
+    }
+    .form-note {
+      margin: 12px 0 0 !important;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .form-status {
+      min-height: 24px;
+      margin: 12px 0 0;
+      color: var(--success);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .directory-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 34px 0 16px;
+    }
+    .directory-toolbar h3 {
+      margin: 0;
+      color: var(--heading);
+      font-size: 24px;
+    }
+    .directory-toolbar select {
+      width: min(100%, 220px);
+      padding: 9px 12px;
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      background: var(--panel);
+      color: var(--text);
+      font-size: 14px;
+    }
+    .directory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .directory-item, .request-item {
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid rgba(27,44,59,0.08);
+      color: var(--soft-text);
+    }
+    .directory-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .directory-item h4, .request-item h4 {
+      margin: 0 0 6px;
+      color: var(--accent);
+      font-size: 20px;
+    }
+    .directory-item p, .request-item p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .blood-chip {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 20px;
+      border: 1px dashed var(--panel-border);
+      border-radius: 16px;
+      color: var(--muted);
+      text-align: center;
+    }
+    .request-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .request-item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 14px;
+    }
+    .urgency {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,184,83,0.15);
+      color: #a35d00;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .urgency.urgent {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .request-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .small-button {
+      padding: 7px 10px;
+      border: 1px solid var(--panel-border);
+      border-radius: 9px;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+    }
+    .small-button:hover { border-color: var(--accent); }
 
     .cta-banner {
       margin: 78px auto 0;
@@ -575,6 +838,7 @@
       .hero-grid { grid-template-columns: 1fr; }
       .hero-panel { margin-left: 0; }
       .feature-grid, .process-grid, .stats-grid, .group-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .directory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .banner-box { flex-direction: column; align-items: flex-start; }
       .banner-actions { justify-content: flex-start; }
     }
@@ -586,6 +850,12 @@
       .nav-right { width: 100%; justify-content: space-between; }
       .hero { padding-top: 36px; }
       .feature-grid, .process-grid, .stats-grid, .group-grid { grid-template-columns: 1fr; }
+      .management-grid, .directory-grid, .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .request-item { grid-template-columns: auto 1fr; }
+      .request-actions { grid-column: 1 / -1; }
+      .directory-toolbar { align-items: flex-start; flex-direction: column; }
+      .directory-toolbar select { width: 100%; }
       .group-badge { width: 70px; height: 70px; }
       .banner-box { padding: 20px 20px; }
       .footer-row { flex-direction: column; align-items: flex-start; }
@@ -608,6 +878,7 @@
       <div class="nav-links" aria-label="নেভিগেশন লিঙ্ক">
         <a href="#info">রক্তের তথ্য</a>
         <a href="#groups">রক্তের গ্রুপ</a>
+        <a href="#donors">দাতা / অনুরোধ</a>
         <a href="#compatibility">সামঞ্জস্য</a>
         <a href="#process">প্রক্রিয়া</a>
       </div>
@@ -642,14 +913,14 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#process" class="btn primary">দাতা হতে চান</a>
+            <a href="#donors" class="btn primary">দাতা হতে চান</a>
             <a href="#groups" class="btn secondary">রক্তের গ্রুপ দেখুন</a>
           </div>
 
           <div class="hero-meta" aria-label="পরিসংখ্যান তথ্য">
-            <div class="mini-pill"><strong>2,500+</strong> রক্তদানকারী</div>
-            <div class="mini-pill"><strong>98%</strong> সামঞ্জস্য সুরক্ষা</div>
-            <div class="mini-pill"><strong>24/7</strong> সহায়তা</div>
+            <div class="mini-pill"><strong>৮টি</strong> সাধারণ রক্তের গ্রুপ</div>
+            <div class="mini-pill"><strong>৪টি</strong> ABO ধরন</div>
+            <div class="mini-pill"><strong>Rh ±</strong> দুইটি ফ্যাক্টর</div>
           </div>
         </div>
 
@@ -694,6 +965,28 @@
           <span class="stat-number">2</span>
           <div class="stat-text">Rh রণ: পজিটিভ (+) ও নেগেটিভ (-)</div>
         </article>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <div class="wrap video-grid">
+        <div class="video-card" aria-label="রক্তদান সচেতনতা অ্যানিমেশন">
+          <video controls autoplay muted loop playsinline preload="metadata" aria-label="রক্তদান সচেতনতা ভিডিও">
+            <source src="assets/blood-awareness.mp4" type="video/mp4" />
+            আপনার ব্রাউজার ভিডিও চালাতে সমর্থন করে না।
+          </video>
+        </div>
+
+        <div class="video-aside">
+          <h3>রক্তদানে প্রাণ বাঁচে</h3>
+          <p>একবার রক্ত দানের মাধ্যমে আপনি অনেকে মানুষকে নতুন জীবন দিতে পারেন। আমাদের প্ল্যাটফর্মে দাতা, রোগী, হাসপাতাল ও ব্লাড ব্যাংক একসঙ্গে কাজ করে।</p>
+          <ul class="feature-list">
+            <li>দ্রুত দাতা খুঁজুন</li>
+            <li>ইমার্জেন্সি রিকুয়েস্ট</li>
+            <li>ব্লাড ব্যাংক তথ্য</li>
+            <li>নিরাপদ সামঞ্জস্য যাচাই</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -809,6 +1102,101 @@
       </div>
     </section>
 
+    <section class="management-section" id="donors">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">কমিউনিটি ব্লাড সিস্টেম</div>
+          <h2>দাতা নিবন্ধন করুন বা রক্তের অনুরোধ জানান</h2>
+        </div>
+
+        <div class="management-grid">
+          <article class="management-card">
+            <h3>দাতা হিসেবে যুক্ত হন</h3>
+            <p>আপনার তথ্য এই ডিভাইসের browser-এ সংরক্ষিত হবে, কোনো সার্ভারে পাঠানো হবে না।</p>
+            <form id="donor-form">
+              <div class="form-grid">
+                <label class="field">নাম
+                  <input name="name" type="text" maxlength="60" autocomplete="name" required />
+                </label>
+                <label class="field">রক্তের গ্রুপ
+                  <select name="blood" required>
+                    <option value="">নির্বাচন করুন</option>
+                    <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                    <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+                  </select>
+                </label>
+                <label class="field">জেলা / শহর
+                  <input name="location" type="text" maxlength="60" autocomplete="address-level2" required />
+                </label>
+                <label class="field">ফোন নম্বর
+                  <input name="phone" type="tel" inputmode="tel" maxlength="16" autocomplete="tel" pattern="\+?[0-9]{7,15}" title="৭ থেকে ১৫ অঙ্কের ফোন নম্বর, চাইলে শুরুতে + লিখুন" required />
+                </label>
+                <label class="field full">শেষ কবে রক্ত দিয়েছেন?
+                  <input name="lastDonation" type="date" />
+                </label>
+              </div>
+              <label class="consent-field"><input name="consent" type="checkbox" required /> আমি সম্মতি দিচ্ছি যে আমার নাম ও ফোন নম্বর এই browser-এর স্থানীয় দাতা তালিকায় দেখানো হবে।</label>
+              <button class="btn primary form-submit" type="submit">দাতা নিবন্ধন</button>
+              <p class="form-status" id="donor-status" role="status" aria-live="polite"></p>
+            </form>
+          </article>
+
+          <article class="management-card" id="requests">
+            <h3>রক্তের অনুরোধ</h3>
+            <p>জরুরি প্রয়োজনের তথ্য যোগ করুন। ফোন নম্বর এই browser-এ স্থানীয়ভাবে রাখা হবে।</p>
+            <form id="request-form">
+              <div class="form-grid">
+                <label class="field">রোগীর নাম
+                  <input name="patient" type="text" maxlength="60" required />
+                </label>
+                <label class="field">প্রয়োজনীয় গ্রুপ
+                  <select name="blood" required>
+                    <option value="">নির্বাচন করুন</option>
+                    <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                    <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+                  </select>
+                </label>
+                <label class="field">জেলা / শহর
+                  <input name="location" type="text" maxlength="60" required />
+                </label>
+                <label class="field">হাসপাতাল
+                  <input name="hospital" type="text" maxlength="80" required />
+                </label>
+                <label class="field">যোগাযোগের ফোন
+                  <input name="phone" type="tel" inputmode="tel" maxlength="16" pattern="\+?[0-9]{7,15}" title="৭ থেকে ১৫ অঙ্কের ফোন নম্বর, চাইলে শুরুতে + লিখুন" required />
+                </label>
+                <label class="field">কখন প্রয়োজন
+                  <input name="neededAt" type="datetime-local" required />
+                </label>
+                <label class="field full">জরুরিতা
+                  <select name="urgency" required>
+                    <option value="জরুরি">জরুরি</option>
+                    <option value="সাধারণ">সাধারণ</option>
+                  </select>
+                </label>
+              </div>
+              <label class="consent-field"><input name="consent" type="checkbox" required /> আমি বুঝেছি, অনুরোধটি শুধুমাত্র এই browser-এ সংরক্ষিত হবে এবং অনলাইনে পাঠানো হবে না।</label>
+              <button class="btn primary form-submit" type="submit">অনুরোধ সংরক্ষণ</button>
+              <p class="form-status" id="request-status" role="status" aria-live="polite"></p>
+            </form>
+          </article>
+        </div>
+
+        <div class="directory-toolbar">
+          <h3>নিবন্ধিত দাতা <span id="donor-count">(০)</span></h3>
+          <label class="field" for="donor-filter">গ্রুপ অনুযায়ী খুঁজুন
+            <select id="donor-filter">
+              <option value="">সব গ্রুপ</option>
+              <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+              <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+            </select>
+          </label>
+        </div>
+        <div class="directory-grid" id="donor-directory" aria-live="polite"></div>
+        <div class="request-list" id="request-list" aria-live="polite"></div>
+      </div>
+    </section>
+
     <section class="process-section" id="process">
       <div class="wrap">
         <div class="section-head">
@@ -845,8 +1233,8 @@
           <p>নিরাপদ রক্তদানের জন্য সঠিক তথ্য, সময়মতো সহায়তা ও সঠিক দাতা-গ্রহীতা মেলবন্ধন।</p>
         </div>
         <div class="banner-actions">
-          <a href="#compatibility" class="btn primary">সামঞ্জস্য দেখুন</a>
-          <a href="#info" class="btn secondary">আরও জানুন</a>
+          <a href="#donors" class="btn primary">দাতা হিসেবে নিবন্ধন</a>
+          <a href="#requests" class="btn secondary">রক্তের অনুরোধ দিন</a>
         </div>
       </div>
     </section>
@@ -871,9 +1259,22 @@
       'O-': ['O-']
     };
 
+    const STORAGE_KEYS = {
+      donors: 'bloodbuddy-donors',
+      requests: 'bloodbuddy-requests',
+      theme: 'bloodbuddy-theme'
+    };
     const bloodSelect = document.getElementById('blood-select');
     const compatibleGroups = document.getElementById('compatible-groups');
     const themeToggle = document.getElementById('theme-toggle');
+    const donorForm = document.getElementById('donor-form');
+    const requestForm = document.getElementById('request-form');
+    const donorDirectory = document.getElementById('donor-directory');
+    const requestList = document.getElementById('request-list');
+    const donorFilter = document.getElementById('donor-filter');
+    const donorStatus = document.getElementById('donor-status');
+    const requestStatus = document.getElementById('request-status');
+    const donorCount = document.getElementById('donor-count');
 
     function renderCompatibility(value) {
       const groups = compatibility[value] || [];
@@ -883,6 +1284,125 @@
         badge.textContent = group;
         return badge;
       }));
+    }
+
+    function readRecords(key) {
+      const stored = localStorage.getItem(key);
+      if (stored === null) return [];
+      const records = JSON.parse(stored);
+      if (!Array.isArray(records)) {
+        throw new Error('সংরক্ষিত তথ্যের ফরম্যাট সঠিক নয়।');
+      }
+      return records;
+    }
+
+    function saveRecords(key, records) {
+      localStorage.setItem(key, JSON.stringify(records));
+    }
+
+    function setStatus(element, message, isError = false) {
+      element.textContent = message;
+      element.style.color = isError ? 'var(--accent)' : 'var(--success)';
+    }
+
+    function createEmptyState(message) {
+      const state = document.createElement('p');
+      state.className = 'empty-state';
+      state.textContent = message;
+      return state;
+    }
+
+    function renderDonors() {
+      const donors = readRecords(STORAGE_KEYS.donors);
+      const selectedBlood = donorFilter.value;
+      const filteredDonors = donors.filter(donor => !selectedBlood || donor.blood === selectedBlood);
+      donorDirectory.replaceChildren();
+      donorCount.textContent = `(${donors.length.toLocaleString('bn-BD')})`;
+
+      if (!filteredDonors.length) {
+        donorDirectory.append(createEmptyState(
+          donors.length ? 'এই গ্রুপে কোনো নিবন্ধিত দাতা নেই।' : 'এখনো কোনো দাতা নিবন্ধিত হননি। প্রথম দাতা হিসেবে যুক্ত হোন।'
+        ));
+        return;
+      }
+
+      filteredDonors.forEach(donor => {
+        const card = document.createElement('article');
+        card.className = 'directory-item';
+        const details = document.createElement('div');
+        const name = document.createElement('h4');
+        name.textContent = donor.name;
+        const location = document.createElement('p');
+        location.textContent = donor.location;
+        const phone = document.createElement('a');
+        phone.href = `tel:${donor.phone.replace(/[^\d+]/g, '')}`;
+        phone.textContent = donor.phone;
+        const lastDonation = document.createElement('p');
+        lastDonation.textContent = donor.lastDonation
+          ? `শেষ দান: ${new Date(`${donor.lastDonation}T00:00:00`).toLocaleDateString('bn-BD')}`
+          : 'শেষ দানের তারিখ দেওয়া হয়নি';
+        const blood = document.createElement('span');
+        blood.className = 'blood-chip';
+        blood.textContent = donor.blood;
+        const remove = document.createElement('button');
+        remove.className = 'small-button';
+        remove.type = 'button';
+        remove.dataset.removeDonor = donor.id;
+        remove.textContent = 'আমার তথ্য মুছুন';
+        details.append(name, location, phone, lastDonation, remove);
+        card.append(details, blood);
+        donorDirectory.append(card);
+      });
+    }
+
+    function renderRequests() {
+      const requests = readRecords(STORAGE_KEYS.requests);
+      const donors = readRecords(STORAGE_KEYS.donors);
+      requestList.replaceChildren();
+      if (!requests.length) {
+        requestList.append(createEmptyState('এখনো কোনো রক্তের অনুরোধ নেই।'));
+        return;
+      }
+
+      requests.slice().reverse().forEach(request => {
+        const item = document.createElement('article');
+        item.className = 'request-item';
+        const blood = document.createElement('span');
+        blood.className = 'blood-chip';
+        blood.textContent = request.blood;
+        const details = document.createElement('div');
+        const title = document.createElement('h4');
+        title.textContent = `${request.blood} রক্ত প্রয়োজন · ${request.patient}`;
+        const description = document.createElement('p');
+        const date = new Date(request.neededAt);
+        const dateText = Number.isNaN(date.getTime())
+          ? request.neededAt
+          : date.toLocaleString('bn-BD', { dateStyle: 'medium', timeStyle: 'short' });
+        const matchingDonors = donors.filter(donor => compatibility[donor.blood]?.includes(request.blood));
+        description.textContent = `${request.hospital}, ${request.location} · প্রয়োজন ${dateText} · এই browser-এর তালিকায় ${matchingDonors.length.toLocaleString('bn-BD')} জন সামঞ্জস্যপূর্ণ দাতা`;
+        const phone = document.createElement('a');
+        phone.href = `tel:${request.phone.replace(/[^\d+]/g, '')}`;
+        phone.textContent = `ফোন: ${request.phone}`;
+        const actions = document.createElement('div');
+        actions.className = 'request-actions';
+        const urgency = document.createElement('span');
+        urgency.className = `urgency${request.urgency === 'জরুরি' ? ' urgent' : ''}`;
+        urgency.textContent = request.urgency;
+        const remove = document.createElement('button');
+        remove.className = 'small-button';
+        remove.type = 'button';
+        remove.dataset.removeRequest = request.id;
+        remove.textContent = 'মুছুন';
+        details.append(title, description, phone);
+        actions.append(urgency, remove);
+        item.append(blood, details, actions);
+        requestList.append(item);
+      });
+    }
+
+    function renderManagementData() {
+      renderDonors();
+      renderRequests();
     }
 
     function applyTheme(theme) {
@@ -895,7 +1415,11 @@
       const icon = themeToggle.querySelector('.theme-toggle-icon');
       text.textContent = isLight ? 'দিন' : 'রাত';
       icon.textContent = isLight ? '☀️' : '🌙';
-      try { localStorage.setItem('bloodbuddy-theme', theme); } catch (error) {}
+      try {
+        localStorage.setItem(STORAGE_KEYS.theme, theme);
+      } catch (error) {
+        console.error('থিম পছন্দ সংরক্ষণ করা যায়নি:', error);
+      }
     }
 
     bloodSelect.addEventListener('change', event => {
@@ -903,12 +1427,114 @@
     });
 
     const storedTheme = (() => {
-      try { return localStorage.getItem('bloodbuddy-theme'); } catch (error) { return null; }
+      try {
+        return localStorage.getItem(STORAGE_KEYS.theme);
+      } catch (error) {
+        console.error('সংরক্ষিত থিম পড়া যায়নি:', error);
+        return null;
+      }
     })();
     const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
     const initialTheme = storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : (prefersLight ? 'light' : 'dark');
     applyTheme(initialTheme);
     renderCompatibility(bloodSelect.value);
+    try {
+      renderManagementData();
+    } catch (error) {
+      console.error('সংরক্ষিত donor/request তথ্য পড়া যায়নি:', error);
+      setStatus(donorStatus, 'স্থানীয় তথ্য পড়া যায়নি। browser storage পরীক্ষা করুন।', true);
+      setStatus(requestStatus, 'স্থানীয় তথ্য পড়া যায়নি। browser storage পরীক্ষা করুন।', true);
+    }
+
+    donorForm.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!donorForm.reportValidity()) return;
+      const formData = new FormData(donorForm);
+      const donor = {
+        id: crypto.randomUUID(),
+        name: String(formData.get('name')).trim(),
+        blood: String(formData.get('blood')),
+        location: String(formData.get('location')).trim(),
+        phone: String(formData.get('phone')).trim(),
+        lastDonation: String(formData.get('lastDonation') || '')
+      };
+      try {
+        const donors = readRecords(STORAGE_KEYS.donors);
+        saveRecords(STORAGE_KEYS.donors, [...donors, donor]);
+        renderDonors();
+        renderRequests();
+        donorForm.reset();
+        setStatus(donorStatus, 'দাতা নিবন্ধন এই browser-এ সংরক্ষিত হয়েছে।');
+      } catch (error) {
+        console.error('দাতা তথ্য সংরক্ষণ করা যায়নি:', error);
+        setStatus(donorStatus, 'দাতা তথ্য সংরক্ষণ হয়নি। browser storage-এর জায়গা/অনুমতি পরীক্ষা করুন।', true);
+      }
+    });
+
+    requestForm.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!requestForm.reportValidity()) return;
+      const formData = new FormData(requestForm);
+      const request = {
+        id: crypto.randomUUID(),
+        patient: String(formData.get('patient')).trim(),
+        blood: String(formData.get('blood')),
+        location: String(formData.get('location')).trim(),
+        hospital: String(formData.get('hospital')).trim(),
+        phone: String(formData.get('phone')).trim(),
+        neededAt: String(formData.get('neededAt')),
+        urgency: String(formData.get('urgency'))
+      };
+      try {
+        const requests = readRecords(STORAGE_KEYS.requests);
+        saveRecords(STORAGE_KEYS.requests, [...requests, request]);
+        renderRequests();
+        requestForm.reset();
+        setStatus(requestStatus, 'রক্তের অনুরোধ এই browser-এ সংরক্ষিত হয়েছে।');
+      } catch (error) {
+        console.error('রক্তের অনুরোধ সংরক্ষণ করা যায়নি:', error);
+        setStatus(requestStatus, 'অনুরোধ সংরক্ষণ হয়নি। browser storage-এর জায়গা/অনুমতি পরীক্ষা করুন।', true);
+      }
+    });
+
+    donorFilter.addEventListener('change', () => {
+      try {
+        renderDonors();
+      } catch (error) {
+        console.error('দাতা তালিকা ফিল্টার করা যায়নি:', error);
+        donorDirectory.replaceChildren(createEmptyState('দাতা তালিকা পড়া যায়নি।'));
+      }
+    });
+
+    donorDirectory.addEventListener('click', event => {
+      const button = event.target.closest('[data-remove-donor]');
+      if (!button) return;
+      try {
+        const remaining = readRecords(STORAGE_KEYS.donors)
+          .filter(donor => donor.id !== button.dataset.removeDonor);
+        saveRecords(STORAGE_KEYS.donors, remaining);
+        renderManagementData();
+        setStatus(donorStatus, 'দাতা তথ্য মুছে ফেলা হয়েছে।');
+      } catch (error) {
+        console.error('দাতা তথ্য মুছে ফেলা যায়নি:', error);
+        setStatus(donorStatus, 'দাতা তথ্য মুছে ফেলা যায়নি।', true);
+      }
+    });
+
+    requestList.addEventListener('click', event => {
+      const button = event.target.closest('[data-remove-request]');
+      if (!button) return;
+      try {
+        const remaining = readRecords(STORAGE_KEYS.requests)
+          .filter(request => request.id !== button.dataset.removeRequest);
+        saveRecords(STORAGE_KEYS.requests, remaining);
+        renderRequests();
+        setStatus(requestStatus, 'অনুরোধ মুছে ফেলা হয়েছে।');
+      } catch (error) {
+        console.error('অনুরোধ মুছে ফেলা যায়নি:', error);
+        setStatus(requestStatus, 'অনুরোধ মুছে ফেলা যায়নি।', true);
+      }
+    });
 
     themeToggle.addEventListener('click', () => {
       const currentTheme = document.body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
