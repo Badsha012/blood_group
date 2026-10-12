@@ -817,18 +817,92 @@
     }
 
     footer {
-      padding: 24px 0 36px;
+      position: relative;
+      margin-top: 26px;
+      padding: 30px 0 28px;
+      background: rgba(255,255,255,0.02);
       border-top: 1px solid var(--line);
     }
-    .footer-row {
+    .footer-shell {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .footer-brand-block {
+      display: grid;
+      gap: 14px;
+    }
+    .footer-brand-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--heading);
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: -0.04em;
+    }
+    .footer-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #a92828);
+      color: white;
+      box-shadow: 0 12px 22px rgba(239,79,79,0.25);
+    }
+    .footer-brand-row svg { width: 20px; height: 20px; }
+    .footer-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 420px;
+    }
+    .footer-title {
+      margin: 0 0 12px;
+      color: var(--heading);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: var(--muted);
+      font-size: 15px;
+      transition: color .2s ease;
+    }
+    .footer-links a:hover { color: var(--heading); }
+    .footer-contact {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .footer-bottom {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 16px;
+      padding-top: 22px;
+      margin-top: 22px;
+      border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
     }
-    .footer-brand {
+    .footer-bottom strong {
       color: var(--heading);
       font-weight: 700;
     }
@@ -841,6 +915,7 @@
       .directory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .banner-box { flex-direction: column; align-items: flex-start; }
       .banner-actions { justify-content: flex-start; }
+      .footer-shell { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 620px) {
@@ -858,7 +933,8 @@
       .directory-toolbar select { width: 100%; }
       .group-badge { width: 70px; height: 70px; }
       .banner-box { padding: 20px 20px; }
-      .footer-row { flex-direction: column; align-items: flex-start; }
+      .footer-shell { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -1241,9 +1317,53 @@
   </main>
 
   <footer>
-    <div class="wrap footer-row">
-      <p class="footer-brand">রক্তবন্ধু · রক্তের গ্রুপ সচেতনতা</p>
-      <p>তথ্যটি শিক্ষামূলক; চিকিৎসকের পরামর্শ ছাড়া কোনো সিদ্ধান্ত নেবেন না।</p>
+    <div class="wrap footer-shell">
+      <div class="footer-brand-block">
+        <div class="footer-brand-row">
+          <span class="footer-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21s-7.5-4.4-7.5-10.1A4.3 4.3 0 0 1 12 8.2a4.3 4.3 0 0 1 7.5 2.7C19.5 16.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" />
+              <path d="M12 10v6m-3-3h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span>রক্তবন্ধু</span>
+        </div>
+        <p class="footer-copy">রক্তদানের গুরুত্ব, নিরাপদ সামঞ্জস্য ও দাতা-গ্রহীতা সচেতনতার জন্য ডিজাইন করা আমাদের প্ল্যাটফর্ম।</p>
+      </div>
+
+      <div>
+        <h3 class="footer-title">দ্রুত লিঙ্ক</h3>
+        <ul class="footer-links">
+          <li><a href="#info">রক্তের তথ্য</a></li>
+          <li><a href="#groups">রক্তের গ্রুপ</a></li>
+          <li><a href="#donors">দাতা / অনুরোধ</a></li>
+          <li><a href="#compatibility">সামঞ্জস্য</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">সাপোর্ট</h3>
+        <ul class="footer-links">
+          <li><a href="#process">রক্তদানের ধাপ</a></li>
+          <li><a href="#donors">দাতা নিবন্ধন</a></li>
+          <li><a href="#requests">অনুরোধ দিন</a></li>
+          <li><a href="#home">হোম</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">কন্টাক্ট</h3>
+        <ul class="footer-contact">
+          <li>সচেতনতা ওসিএল</li>
+          <li>হেল্পলাইন: +৮৮ ০১৭xx-xxxxxx</li>
+          <li>support@bloodbuddy.example</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <span><strong>রক্তবন্ধু</strong> · রক্তের গ্রুপ সচেতনতা</span>
+      <span>তথ্যটি শিক্ষামূলক; চিকিৎসকের পরামর্শ ছাড়া কোনো সিদ্ধান্ত নেবেন না।</span>
     </div>
   </footer>
 
