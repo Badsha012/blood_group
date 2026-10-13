@@ -675,12 +675,66 @@
       font-size: 14px;
       font-weight: 600;
     }
+    .quick-tools {
+      padding: 76px 0 0;
+    }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 22px;
+    }
+    .tool-card {
+      padding: 24px 20px 20px;
+      border-radius: 24px;
+      background: var(--card);
+      border: 1px solid rgba(27, 44, 59, 0.08);
+      box-shadow: 0 12px 24px rgba(18, 32, 44, 0.06);
+    }
+    .tool-card h3 {
+      margin: 0 0 8px;
+      color: var(--heading);
+      font-size: 24px;
+      line-height: 1.25;
+    }
+    .tool-card p {
+      margin: 0 0 14px;
+      color: var(--soft-text-2);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .tool-card .field {
+      margin-top: 10px;
+    }
+    .tool-result {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: rgba(43, 196, 138, 0.08);
+      color: var(--soft-text);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+    .tool-result.error {
+      background: rgba(239,79,79,0.08);
+      color: var(--accent);
+    }
+    .toolbar-controls {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 34px 0 16px;
+      flex-wrap: wrap;
+    }
     .directory-toolbar {
       display: flex;
-      align-items: center;
+      align-items: end;
       justify-content: space-between;
       gap: 14px;
-      margin: 34px 0 16px;
+      width: 100%;
+      flex-wrap: wrap;
     }
     .directory-toolbar h3 {
       margin: 0;
@@ -695,6 +749,32 @@
       background: var(--panel);
       color: var(--text);
       font-size: 14px;
+    }
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .search-field {
+      min-width: min(100%, 220px);
+    }
+    .search-field input {
+      min-height: 42px;
+    }
+    .file-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border-radius: 12px;
+      border: 1px solid var(--panel-border);
+      cursor: pointer;
+      color: var(--text);
+      background: rgba(255,255,255,0.02);
+      font-size: 13px;
+      font-weight: 700;
     }
     .directory-grid {
       display: grid;
@@ -1178,6 +1258,67 @@
       </div>
     </section>
 
+    <section class="quick-tools" id="tools">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">ফাস্ট টুলস</div>
+          <h2>দ্রুত সিদ্ধান্ত নিতে সহায়তা করেন এমন নতুন টুলস</h2>
+        </div>
+
+        <div class="tool-grid">
+          <article class="tool-card">
+            <h3>দাতা/গ্রহীতার সামঞ্জস্য</h3>
+            <p>আপনার রক্তের গ্রুপ নির্বাচন করুন ও দ্রুত সেই গ্রুপের গ্রহণযোগ্যতা দেখে নিন।</p>
+            <label class="field">আপনার গ্রুপ
+              <select id="quick-match-blood">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+            </label>
+            <div class="tool-result" id="quick-match-result" aria-live="polite"></div>
+          </article>
+
+          <article class="tool-card">
+            <h3>দানযোগ্যতা চেকার</h3>
+            <p>বয়স, সর্বশেষ দানের সময় ও সুস্থতার উপর ভিত্তি করে আপনি দান করতে পারেন কিনা খুঁজে নিন।</p>
+            <form id="eligibility-form">
+              <label class="field">বয়স
+                <input type="number" name="age" min="16" max="80" value="28" required />
+              </label>
+              <label class="field">সর্বশেষ দানের তারিখ
+                <input type="date" name="lastDonation" required />
+              </label>
+              <label class="field">আজ আপনি কি সুস্থ ও সক্রিয়?
+                <select name="healthy" required>
+                  <option value="yes">হ্যাঁ</option>
+                  <option value="no">না</option>
+                </select>
+              </label>
+              <button class="btn secondary form-submit" type="submit">চেক করুন</button>
+            </form>
+            <div class="tool-result" id="eligibility-result" aria-live="polite"></div>
+          </article>
+
+          <article class="tool-card">
+            <h3>ডাটা ব্যাকআপ</h3>
+            <p>এই browser-এ সংরক্ষিত দাতা ও অনুরোধ ডেটা এক্সপোর্ট/ইমপোর্ট করে রাখতে পারেন।</p>
+            <div class="toolbar-actions">
+              <button class="small-button" id="export-data" type="button">এখনই এক্সপোর্ট</button>
+              <label class="file-label" for="import-data">ইমপোর্ট JSON</label>
+              <input id="import-data" type="file" accept="application/json" hidden />
+            </div>
+            <div class="tool-result" id="backup-status" aria-live="polite">ডেটা এখনো নিরাপদে browser-এ রয়েছে।</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="management-section" id="donors">
       <div class="wrap">
         <div class="section-head">
@@ -1395,6 +1536,13 @@
     const donorStatus = document.getElementById('donor-status');
     const requestStatus = document.getElementById('request-status');
     const donorCount = document.getElementById('donor-count');
+    const quickMatchBlood = document.getElementById('quick-match-blood');
+    const quickMatchResult = document.getElementById('quick-match-result');
+    const eligibilityForm = document.getElementById('eligibility-form');
+    const eligibilityResult = document.getElementById('eligibility-result');
+    const exportDataButton = document.getElementById('export-data');
+    const importDataInput = document.getElementById('import-data');
+    const backupStatus = document.getElementById('backup-status');
 
     function renderCompatibility(value) {
       const groups = compatibility[value] || [];
@@ -1520,6 +1668,82 @@
       });
     }
 
+    function renderQuickMatch() {
+      const value = quickMatchBlood.value;
+      const groups = compatibility[value] || [];
+      quickMatchResult.textContent = `${value} রক্তের জন্য গ্রহণযোগ্য দাতা/গ্রহীতা: ${groups.join(', ')}`;
+      quickMatchResult.classList.remove('error');
+    }
+
+    function checkEligibility(formData) {
+      const age = Number(formData.get('age'));
+      const lastDonation = formData.get('lastDonation');
+      const healthy = formData.get('healthy');
+      const today = new Date();
+      const lastDonationDate = lastDonation ? new Date(`${lastDonation}T00:00:00`) : null;
+      const monthsSinceDonation = lastDonationDate ? Math.max(0, (today - lastDonationDate) / (1000 * 60 * 60 * 24 * 30)) : null;
+
+      if (age < 18 || age > 60) {
+        return 'এই ফর্ম অনুযায়ী, বর্তমান প্রেক্ষাপটে আধুনিক দানযোগ্যতার জন্য ১৮–৬০ বছরই নিরাপদ সীমা ধরা হয়।';
+      }
+      if (healthy !== 'yes') {
+        return 'আজ আপনি সুস্থ না হলে বা শারীরিকভাবে সক্রিয় না হলে দান এড়িয়ে যাওয়া উচিত।';
+      }
+      if (lastDonationDate && monthsSinceDonation < 3) {
+        return 'সর্বশেষ দানের ৩ মাসের মধ্যে হলে আবার রক্ত দান করা উচিত নয়।';
+      }
+      return 'আপনি দান করতে পারবেন, যদি আপনার সামগ্রিক শারীরিক অবস্থা স্থিতিশীল থাকে।';
+    }
+
+    function exportDataBundle() {
+      const payload = {
+        donors: readRecords(STORAGE_KEYS.donors),
+        requests: readRecords(STORAGE_KEYS.requests),
+        exportedAt: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.download = 'bloodbuddy-data.json';
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(url);
+      backupStatus.textContent = 'ডেটা JSON ফাইল হিসেবে export করা হয়েছে।';
+      backupStatus.classList.remove('error');
+    }
+
+    function importDataBundle(file) {
+      if (!file) {
+        backupStatus.textContent = 'ইমপোর্টের জন্য একটি JSON ফাইল বেছে নিন।';
+        backupStatus.classList.add('error');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = event => {
+        try {
+          const parsed = JSON.parse(String(event.target.result));
+          const donors = Array.isArray(parsed.donors) ? parsed.donors : [];
+          const requests = Array.isArray(parsed.requests) ? parsed.requests : [];
+          saveRecords(STORAGE_KEYS.donors, donors);
+          saveRecords(STORAGE_KEYS.requests, requests);
+          renderManagementData();
+          backupStatus.textContent = `ডেটা সফলভাবে import হয়েছে (${donors.length} দাতা, ${requests.length} অনুরোধ)।`;
+          backupStatus.classList.remove('error');
+        } catch (error) {
+          console.error('JSON ইমপোর্ট ব্যর্থ:', error);
+          backupStatus.textContent = 'JSON ফাইলটি সঠিক নয়। অনুগ্রহ করে বৈধ export ফাইল নির্বাচন করুন।';
+          backupStatus.classList.add('error');
+        }
+      };
+      reader.onerror = () => {
+        backupStatus.textContent = 'ফাইল পড়া যায়নি। আবার চেষ্টা করুন।';
+        backupStatus.classList.add('error');
+      };
+      reader.readAsText(file);
+    }
+
     function renderManagementData() {
       renderDonors();
       renderRequests();
@@ -1544,6 +1768,33 @@
 
     bloodSelect.addEventListener('change', event => {
       renderCompatibility(event.target.value);
+    });
+
+    quickMatchBlood.addEventListener('change', renderQuickMatch);
+    renderQuickMatch();
+
+    eligibilityForm.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!eligibilityForm.reportValidity()) return;
+      const formData = new FormData(eligibilityForm);
+      eligibilityResult.textContent = checkEligibility(formData);
+      eligibilityResult.classList.remove('error');
+    });
+
+    exportDataButton.addEventListener('click', () => {
+      try {
+        exportDataBundle();
+      } catch (error) {
+        console.error('ডেটা এক্সপোর্ট ব্যর্থ:', error);
+        backupStatus.textContent = 'ডেটা export করা যায়নি। browser storage চেক করুন।';
+        backupStatus.classList.add('error');
+      }
+    });
+
+    importDataInput.addEventListener('change', event => {
+      const [file] = event.target.files || [];
+      importDataBundle(file);
+      event.target.value = '';
     });
 
     const storedTheme = (() => {
